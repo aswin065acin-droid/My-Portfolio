@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswin | Full Stack Developer</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Custom styles -->
+    <style>
+        /* Button styles */
+        .btn-primary {
+          @apply bg-orange-400 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-orange-500 hover:shadow-lg hover:shadow-orange-400/50 transform hover:-translate-y-1;
+        }
+
+        .btn-secondary {
+          @apply border border-orange-400 text-orange-400 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-orange-400 hover:text-white hover:shadow-lg hover:shadow-orange-400/50 transform hover:-translate-y-1;
+        }
+
+        /* Ensure images load properly */
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+
+        /* Custom scrollbar (optional) */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #ff6a00;
+          border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #ff8c00;
+        }
+
+        /* Animation classes will be handled by GSAP in script.js */
+    </style>
+</head>
+<body class="bg-black text-white antialiased">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black/50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-xl font-bold text-orange-400">Aswin</span>
+                    </div>
+                    <div class="hidden md:md:block space-x-8">
+                        <a href="#about" class="hover:text-orange-400 transition-colors duration-300">About</a>
+                        <a href="#skills" class="hover:text-orange-400 transition-colors duration-300">Skills</a>
+                        <a href="#projects" class="hover:text-orange-400 transition-colors duration-300">Projects</a>
+                        <a href="#contact" class="hover:text-orange-400 transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="#projects" class="btn-primary hover:btn-primary-hover">View Work</a>
+                    <a href="#contact" class="ml-4 btn-secondary hover:btn-secondary-hover">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-20 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                        Hi, I'm <span class="text-orange-400">Aswin</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl font-medium text-white/90">
+                        Full Stack Developer
+                    </p>
+                    <p class="text-gray-300 max-w-xl">
+                        I build scalable web applications with modern technologies, focusing on clean architecture, performance, and user experience. Specializing in React, Node.js, and cloud-native solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="btn-primary hover:btn-primary-hover">View Work</a>
+                        <a href="#contact" class="ml-4 btn-secondary hover:btn-secondary-hover">Contact</a>
+                    </div>
+                </div>
+                <!-- Hero Image Placeholder -->
+                <div class="relative">
+                    <div class="w-80 h-96 rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-orange-500/20 to-transparent">
+                        <img src="C:\Users\Aswin\Desktop\Portfolio\pic.png" alt="Aswin Portrait" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="space-y-8">
+                <!-- Timeline Item -->
+                <div class="flex space-x-6">
+                    <div class="flex-shrink-0 w-2 h-2 bg-orange-400 rounded-full mt-1"></div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-orange-400">2020 - 2022</h3>
+                        <p class="text-gray-300">Bachelor of Science in Computer Science</p>
+                    </div>
+                </div>
+                <div class="flex space-x-6">
+                    <div class="flex-shrink-0 w-2 h-2 bg-orange-400 rounded-full mt-1"></div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-orange-400">2022 - Present</h3>
+                        <p class="text-gray-300">Full Stack Developer at Tech Solutions Inc.</p>
+                    </div>
+                </div>
+                <div class="flex space-x-6">
+                    <div class="flex-shrink-0 w-2 h-2 bg-orange-400 rounded-full mt-1"></div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-orange-400">2023</h3>
+                        <p class="text-gray-300">Certified AWS Solutions Architect</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-8 text-gray-300 leading-relaxed">
+                Passionate about creating seamless digital experiences, I combine technical expertise with creative problem-solving to deliver robust applications. My journey in full-stack development has equipped me with a versatile skill set spanning frontend frameworks, backend architectures, and DevOps practices.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card -->
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <span class="w-5 h-5 bg-orange-400 rounded mr-2"></span>
+                        Frontend
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span>React</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-90 transition-width duration-1000" id="react-bar"></div>
+                            </div>
+                            <span class="text-orange-400">90%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Vue.js</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-80 transition-width duration-1000" id="vue-bar"></div>
+                            </div>
+                            <span class="text-orange-400">80%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>TypeScript</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-85 transition-width duration-1000" id="ts-bar"></div>
+                            </div>
+                            <span class="text-orange-400">85%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <span class="w-5 h-5 bg-orange-400 rounded mr-2"></span>
+                        Backend
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span>Node.js</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-95 transition-width duration-1000" id="node-bar"></div>
+                            </div>
+                            <span class="text-orange-400">95%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Python</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-85 transition-width duration-1000" id="python-bar"></div>
+                            </div>
+                            <span class="text-orange-400">85%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Java</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-75 transition-width duration-1000" id="java-bar"></div>
+                            </div>
+                            <span class="text-orange-400">75%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <span class="w-5 h-5 bg-orange-400 rounded mr-2"></span>
+                        DevOps & Tools
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span>AWS</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-80 transition-width duration-1000" id="aws-bar"></div>
+                            </div>
+                            <span class="text-orange-400">80%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Docker</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-70 transition-width duration-1000" id="docker-bar"></div>
+                            </div>
+                            <span class="text-orange-400">70%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Git</span>
+                            <div class="w-full bg-gray-700 h-2.5 rounded overflow-hidden">
+                                <div class="bg-orange-400 h-full w-90 transition-width duration-1000" id="git-bar"></div>
+                            </div>
+                            <span class="text-orange-400">90%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card -->
+                <div class="group relative overflow-hidden bg-gray-800/50 rounded-xl border border-white/10 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-white">E-Commerce Platform</h3>
+                        <p class="text-gray-300 mb-4 line-clamp-3">
+                            A full-stack e-commerce solution with React frontend, Node.js/Express backend, and PostgreSQL database. Features include product catalog, shopping cart, payment integration, and admin dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="text-orange-400 hover:text-orange-300 transition-colors duration-300">View Project →</a>
+                    </div>
+                </div>
+                <!-- Project Card -->
+                <div class="group relative overflow-hidden bg-gray-800/50 rounded-xl border border-white/10 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-white">SaaS Dashboard</h3>
+                        <p class="text-gray-300 mb-4 line-clamp-3">
+                            Analytics dashboard for monitoring application performance and user behavior. Built with Vue.js, D3.js for visualizations, and Firebase backend.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">Vue.js</span>
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">Firebase</span>
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">D3.js</span>
+                        </div>
+                        <a href="#" class="text-orange-400 hover:text-orange-300 transition-colors duration-300">View Project →</a>
+                    </div>
+                </div>
+                <!-- Project Card -->
+                <div class="group relative overflow-hidden bg-gray-800/50 rounded-xl border border-white/10 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-white">Real-Time Chat App</h3>
+                        <p class="text-gray-300 mb-4 line-clamp-3">
+                            WebSocket-based chat application with room creation, private messaging, and media sharing. Built with Socket.io, React, and MongoDB.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">Socket.io</span>
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-orange-500/20 text-orange-400 text-xs px-2 py-1 rounded">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-orange-400 hover:text-orange-300 transition-colors duration-300">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            <form class="space-y-6 max-w-xl mx-auto">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800/50 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-white placeholder-gray-400" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800/50 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-white placeholder-gray-400" placeholder="your@email.com" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-800/50 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-white placeholder-gray-400" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="w-full btn-primary hover:btn-primary-hover py-3">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col items-center">
+                <span class="text-gray-400 text-sm">© 2026 Aswin. All rights reserved.</span>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.35C0 23.407.593 24 1.325 24h11.49l-.987 4.88H9.38V24h4.122V18.707h2.838l.51-2.47h-3.34v-1.981c0-1.192.686-2.08 1.842-2.08h1.962V8.413c-.013-.388.05-.776.236-1.095.203-.347.576-.541 1.125-.541h2.792V5.287c0-.468.184-.83.412-1.127.227-.297.586-.458 1.024-.458h2.665V1.325c0-.732-.592-1.325-1.325-1.325z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675s-4.128-11.675-11.675-11.675-11.675 4.128-11.675 11.675 4.128 11.675 11.675 11.675zm1.242-10.03a2.34 2.34 0 01-.471-1.376 2.36 2.36 0 01.471-1.376 2.34 2.34 0 011.376-.471 2.36 2.36 0 011.376.471 2.34 2.34 0 01.471 1.376 2.36 2.36 0 01-.471 1.376 2.34 2.34 0 01-1.376.471 2.36 2.36 0 01-1.376-.471z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.607 1.789-1.464 2.16-2.487-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-5.515 6.613 0 .516.045 1.019.133 1.503-4.582-.229-8.648-2.425-10.89-5.747-.476.822-.75 1.781-.75 2.85 0 2.297 1.171 4.334 2.964 5.523-1.09-.034-2.158-.334-3.076-.826.288 2.248 1.12 4.232 2.606 4.282-1.158.306-2.385.479-3.692.479-.24 0-.476-.029-.705-.086.636 1.99 2.482 3.44 4.604 3.478-2.608 2.043-5.72 3.265-9.078 3.265-.59 0-1.165-.063-1.726-.185 1.244.781 2.72 1.238 4.318 1.238 5.178 0 8.006-4.285 8.006-8.005 0-.122-.003-.244-.009-.366 1.012-.728 1.87-1.641 2.411-2.688z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // GSAP Animations for Portfolio
+        document.addEventListener('DOMContentLoaded', () => {
+          // Register GSAP plugins
+          gsap.registerPlugin(ScrollTrigger);
+
+          // Hero section animation on load
+          const heroTl = gsap.timeline();
+          heroTl
+            .from('#hero .text-4xl', {
+              duration: 1,
+              y: 50,
+              opacity: 0,
+              ease: 'power3.out'
+            })
+            .from('#hero .text-xl', {
+              duration: 1,
+              y: 50,
+              opacity: 0,
+              ease: 'power3.out',
+              delay: -0.5
+            }, 0)
+            .from('#hero .text-gray-300', {
+              duration: 1,
+              y: 50,
+              opacity: 0,
+              ease: 'power3.out',
+              delay: -0.5
+            }, 0)
+            .from('#hero .btn-primary', {
+              duration: 1,
+              y: 50,
+              opacity: 0,
+              ease: 'power3.out',
+              delay: -0.3
+            }, 0)
+            .from('#hero .btn-secondary', {
+              duration: 1,
+              y: 50,
+              opacity: 0,
+              ease: 'power3.out',
+              delay: -0.3
+            }, 0)
+            .from('#hero .relative', {
+              duration: 1,
+              x: 100,
+              opacity: 0,
+              ease: 'power3.out',
+              delay: -0.5
+            }, 0);
+
+          // Section reveal animations
+          const sections = document.querySelectorAll('section');
+          sections.forEach((section, index) => {
+            gsap.from(section, {
+              scrollTrigger: {
+                trigger: section,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+              },
+              duration: 1,
+              y: 50,
+              opacity: 0,
+              ease: 'power3.out'
+            });
+          });
+
+          // Skills progress bar animation
+          const skillsSection = document.getElementById('skills');
+          if (skillsSection) {
+            gsap.fromTo(
+              ['#react-bar', '#vue-bar', '#ts-bar', '#node-bar', '#python-bar', '#java-bar', '#aws-bar', '#docker-bar', '#git-bar'],
+              { width: '0%' },
+              {
+                width: (el) => {
+                  // Get the target width from the sibling span
+                  const parent = el.parentNode.parentNode;
+                  const textSpan = parent.querySelector('span:first-child');
+                  // This is a simplified approach - in a real app you'd store the width in data attribute
+                  // For demo, we'll set specific widths
+                  const id = el.id;
+                  const widths = {
+                    'react-bar': '90%',
+                    'vue-bar': '80%',
+                    'ts-bar': '85%',
+                    'node-bar': '95%',
+                    'python-bar': '85%',
+                    'java-bar': '75%',
+                    'aws-bar': '80%',
+                    'docker-bar': '70%',
+                    'git-bar': '90%'
+                  };
+                  return widths[id] || '0%';
+                },
+                duration: 2,
+                ease: 'power3.out',
+                scrollTrigger: {
+                  trigger: skillsSection,
+                  start: 'top 80%',
+                  toggleActions: 'play none none reverse'
+                }
+              }
+            );
+          }
+
+          // Button hover glow effect (enhance with GSAP)
+          const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+          buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+              gsap.to(button, {
+                scale: 1.05,
+                duration: 0.3,
+                ease: 'power2.out'
+              });
+            });
+            button.addEventListener('mouseleave', () => {
+              gsap.to(button, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+              });
+            });
+          });
+
+          // Project card hover enhancement
+          const projectCards = document.querySelectorAll('.group');
+          projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+              gsap.to(card.querySelector('.bg-gradient-to-br'), {
+                opacity: 1,
+                duration: 0.5,
+                ease: 'power2.out'
+              });
+              gsap.to(card, {
+                scale: 1.02,
+                duration: 0.5,
+                ease: 'power2.out'
+              });
+            });
+            card.addEventListener('mouseleave', () => {
+              gsap.to(card.querySelector('.bg-gradient-to-br'), {
+                opacity: 0,
+                duration: 0.5,
+                ease: 'power2.out'
+              });
+              gsap.to(card, {
+                scale: 1,
+                duration: 0.5,
+                ease: 'power2.out'
+              });
+            });
+          });
+
+          // Image hover scale
+          const heroImage = document.querySelector('#hero img');
+          if (heroImage) {
+            heroImage.addEventListener('mouseenter', () => {
+              gsap.to(heroImage, {
+                scale: 1.05,
+                duration: 0.5,
+                ease: 'power2.out'
+              });
+            });
+            heroImage.addEventListener('mouseleave', () => {
+              gsap.to(heroImage, {
+                scale: 1,
+                duration: 0.5,
+                ease: 'power2.out'
+              });
+            });
+          }
+
+          // Custom cursor (optional enhancement)
+          const cursor = document.createElement('div');
+          cursor.classList.add('custom-cursor');
+          document.body.appendChild(cursor);
+
+          document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, {
+              x: e.clientX,
+              y: e.clientY,
+              duration: 0.2,
+              ease: 'power2.out'
+            });
+          });
+
+          document.addEventListener('mouseenter', () => {
+            gsap.to(cursor, {
+              scale: 1,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
+          });
+
+          document.addEventListener('mouseleave', () => {
+            gsap.to(cursor, {
+              scale: 0,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
+          });
+
+          // Add cursor styles
+          const style = document.createElement('style');
+          style.textContent = `
+            .custom-cursor {
+              position: fixed;
+              width: 12px;
+              height: 12px;
+              background: #ff6a00;
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 9999;
+              transform: translate(-50%, -50%);
+              transition: transform 0.2s ease;
+            }
+            .custom-cursor:hover {
+              width: 24px;
+              height: 24px;
+              background: rgba(255, 106, 0, 0.3);
+            }
+          `;
+          document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
